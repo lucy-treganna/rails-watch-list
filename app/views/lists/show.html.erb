@@ -1,12 +1,28 @@
-<h1>Here is the list: <%= @list.name %></h1>
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+<br>
+<div class="container">
 <% @list.bookmarks.each do |bookmark| %>
-  <p> <%= bookmark.movie.title %> </p>
-  <p> <%= bookmark.comment %></p>
+  <div class="card-bookmark">
+    <%= image_tag bookmark.movie.poster_url %>
+      <div class="card-bookmark-info">
+        <h2> <%= bookmark.movie.title %> </h2>
+        <h2> <%= bookmark.movie.rating %></h2>
+        <p> <%= bookmark.movie.overview %></p>
+        <br>
+        <p>Comment:</p>
+        <p> <%= bookmark.comment %></p>
+        <p><%= link_to "delete this bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+      </div>
+  </div>
 <% end %>
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment, as: :text %>
-  <%= f.association :movie %>
-  <%= f.button :submit %>
+  <%= f.input :comment, as: :text, placeholder: 'Enter a comment about the moive' %>
+  <%= f.association :movie, prompt: 'Select a movie' %>
+  <%= f.submit %>
 <% end %>
+</div>
