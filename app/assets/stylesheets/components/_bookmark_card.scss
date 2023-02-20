@@ -1,3 +1,4 @@
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -17,11 +18,8 @@
     }
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
+// TODO: Add media queries!!
+
 
 .card-bookmark {
   display: grid;

@@ -9,14 +9,11 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  <nav class="navbar-lewagon navbar-collapse">
-    <a class="navbar-lewagaon navbar-brand img" href="#">
-      <i class="fa-solid fa-clapperboard"></i>
-    </a>
-    <a class="navbar-brand" href="http://localhost:3000/lists">My Lists</a>
-    <a class="navbar-brand" href="http://localhost:3000/lists/new">New List</a>
-  </nav>
   <body>
+    <%= render "layouts/navbar" %>
+    <div class="total-wrapper">
     <%= yield %>
+    </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>

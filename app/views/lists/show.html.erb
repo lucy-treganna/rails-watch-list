@@ -1,22 +1,24 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
-  <div class="container">
-    <h1><%= @list.name %></h1>
-  </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key %>');">
+    <div class="container">
+      <h1><%= @list.name %></h1>
+    </div>
 </div>
 <br>
 <div class="container">
 <% @list.bookmarks.each do |bookmark| %>
-  <div class="card-bookmark">
-    <%= image_tag bookmark.movie.poster_url %>
-      <div class="card-bookmark-info">
+  <div class="d-flex flex-column">
+    <%= image_tag bookmark.movie.poster_url, style: 'height: 50vh; width: 20vw' %>
+    <div class="d-flex flex-column">
+      <div class="d-flex justify-content-between">
         <h2> <%= bookmark.movie.title %> </h2>
         <h2> <%= bookmark.movie.rating %></h2>
-        <p> <%= bookmark.movie.overview %></p>
-        <br>
-        <p>Comment:</p>
-        <p> <%= bookmark.comment %></p>
+      </div>
+      <p> <%= bookmark.movie.overview %></p>
+      <div class="d-flex justify-content-between">
+        <p> Comment: <%= bookmark.comment %></p>
         <p><%= link_to "delete this bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
       </div>
+    </div>
   </div>
 <% end %>
 
