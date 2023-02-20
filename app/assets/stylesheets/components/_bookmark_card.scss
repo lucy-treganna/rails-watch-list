@@ -1,56 +1,67 @@
-
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    a {
-      text-decoration: none;
-      color: white;
-    }
-}
-
-// TODO: Add media queries!!
-
-
 .card-bookmark {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-  }
-}
-
-.card-bookmark-info {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.card-bookmark-info {
   overflow: hidden;
+  // height: 350px;
+  width: 500px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  h2 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
-  p {
-    font-size: 12px;
-    opacity: .7;
-    margin: 0;
-  }
+  display: flex;
 }
+
+.movie-poster {
+  height: 100%;
+  width: 240px;
+  object-fit: cover;
+}
+
+.card-bookmark-content {
+  padding: 16px;
+}
+
+.title-rating {
+  display: flex;
+  justify-content: space-between;
+}
+
+.overview {
+}
+
+.comment-delete {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+// .card-bookmark {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-gap: 16px;
+//   img {
+//     height: 200px;
+//     width: 100%;
+//     object-fit: cover;
+//   }
+// }
+
+// .card-bookmark-info {
+//   padding: 16px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+// }
+
+// .card-bookmark-info {
+//   overflow: hidden;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   h2 {
+//     font-size: 16px;
+//     font-weight: bold;
+//     margin: 0;
+//   }
+//   p {
+//     font-size: 12px;
+//     opacity: .7;
+//     margin: 0;
+//   }
+// }
