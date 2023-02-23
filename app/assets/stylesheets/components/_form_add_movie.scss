@@ -1,0 +1,21 @@
+.form {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.form-content {
+  padding: 16px;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #45007a;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #68007a;
+  color: white;
+}
